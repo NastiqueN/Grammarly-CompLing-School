@@ -34,24 +34,16 @@ def gen_song(first_word):
         for line in file:
             line = line.split()
             if line[0] == first_word and len(random_list) < 11:
-                print(line)
                 random_list.append(line[1])
-        print(random_list)
     if song_mong.count(' ') < 100 and random_list:
         next_word = random.choice(random_list)
-#        print(song_mong)
-#        print(next_word)
         gen_song(next_word)
     else:
         print(song_mong)
         
-def generate_model(cfdist, word, n, num=15):
+def gen_model(cfdist, word, n, num=15):
     for i in range(num):
         print (word)
         word = random.choice(list(cfdist[word].keys())[:n])
-text = nltk.corpus.genesis.words('english-kjv.txt')
-bigrams = nltk.bigrams(text)
-cfd = nltk.ConditionalFreqDist(bigrams)
-
-#generate_model(cfd, 10, 'living')
+cfd = nltk.ConditionalFreqDist(bigr)
 
